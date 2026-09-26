@@ -4,14 +4,14 @@ Fill this in and keep it updated. Claude Code reads this file at the start of a
 session so it knows what you're building.
 
 ## The idea
-A trading bot for meme coins. It watches newly launched tokens, filters out the
-obvious scams, and buys and sells by set rules. (Draft, still to be confirmed.)
+A trading bot for meme coins, for my own use (stage 1). It watches newly
+launched Solana tokens, filters out the obvious scams, and alerts me. Automatic
+trading comes later.
 
 ## Open decisions
-- [ ] **Who is it for?** My own trading only, or a product other people pay for?
-- [ ] **Which blockchain?** Solana is where most meme coin launches happen
-      (pump.fun, Raydium). Base and Ethereum are the alternatives.
-- [ ] **What does the bot do?** Alerts only (I decide), or does it trade on its own?
+- [x] **Who is it for?** Just me for stage 1. Maybe a product later.
+- [x] **Which blockchain?** Solana first. Possibly Robinhood later (look into what it offers for crypto and API access).
+- [x] **What does the bot do?** Alerts first; automatic trading later.
 
 ## Target customer
 <!-- Only needed if this becomes a product for others. -->
@@ -40,15 +40,18 @@ Two routes, with very different risk:
 - Set hard limits on the maximum spend per trade and the maximum loss per day.
 
 ## Must-have features (version 1)
-- [ ] New token scanner
-- [ ] Safety score for each token
-- [ ] Paper trading with a trade log
+- [x] New token scanner (DexScreener) → `memebot/`
+- [x] Safety check for each token (market filters + RugCheck)
+- [x] Alerts: console, `data/alerts.csv`, optional Telegram
+- [ ] Paper trading: track the price after each alert and measure would-be profit/loss
 
 ## Later / nice to have
-- Telegram alerts
+- Faster launch feed (pump.fun / Raydium new pools)
 - Live trading
+- Robinhood support
 - Web dashboard (could reuse `index.html`)
 
 ## Progress log
 - 2026-09-26: Repo set up with `plan.md` and a starter landing page (`index.html`).
 - 2026-09-26: Product direction set: meme coin trading bot. Plan drafted.
+- 2026-09-26: Decisions: just me, Solana first, alerts before automation. Built the stage 1 alert scanner.

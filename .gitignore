@@ -1,0 +1,14 @@
+# Secrets: never commit these
+.env
+*.key
+*keypair*.json
+id.json
+
+# Bot output
+data/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
