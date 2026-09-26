@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Product Name</title>
+  <style>
+    :root {
+      --bg: #fdfcf9;
+      --text: #1f2328;
+      --muted: #5c6370;
+      --accent: #2f6f5e;
+      --accent-text: #ffffff;
+      --card: #ffffff;
+      --border: #e4e2dc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16181c;
+        --text: #eceae4;
+        --muted: #a3a8b1;
+        --accent: #5fb39b;
+        --accent-text: #0d1512;
+        --card: #1f2227;
+        --border: #30343b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 64px 16px; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.15; margin: 0 0 16px; }
+    .lead { font-size: 1.2rem; color: var(--muted); margin: 0 0 32px; }
+    .benefits { display: grid; gap: 16px; margin: 40px 0; padding: 0; list-style: none; }
+    .benefits li {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .benefits strong { display: block; }
+    form { display: flex; flex-wrap: wrap; gap: 8px; }
+    input[type="email"] {
+      flex: 1 1 240px;
+      padding: 12px 14px;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--text);
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: 0;
+      border-radius: 8px;
+      background: var(--accent);
+      color: var(--accent-text);
+      cursor: pointer;
+    }
+    .note { font-size: 0.9rem; color: var(--muted); margin-top: 8px; }
+    footer { margin-top: 64px; font-size: 0.9rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Your headline: the result your customer wants</h1>
+    <p class="lead">One sentence on who this is for and how it helps them. Replace this with copy you draft in Claude chat.</p>
+
+    <form onsubmit="event.preventDefault(); document.getElementById('msg').textContent = 'Thanks! (Sign-up not connected yet.)';">
+      <input type="email" placeholder="you@example.com" required aria-label="Email address">
+      <button type="submit">Join the waitlist</button>
+    </form>
+    <p class="note" id="msg">No spam. Unsubscribe any time.</p>
+
+    <ul class="benefits">
+      <li><strong>Benefit one</strong>What changes for the customer.</li>
+      <li><strong>Benefit two</strong>Why it's better than what they do now.</li>
+      <li><strong>Benefit three</strong>Why they should trust you.</li>
+    </ul>
+
+    <footer>Made in Whangārei, Northland, New Zealand.</footer>
+  </main>
+</body>
+</html>
